@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
+<generatorConfiguration>
+    <!--mysql-connector-java-5.1.6.jar包的地址 -->
+    <classPathEntry
+            location="G:\work\Jebao-Mybatis-Generator\lib\5.1.6\mysql-connector-java-5.1.6.jar"/>
+    <context id="context1" targetRuntime="MyBatis3">
+        <commentGenerator>
+            <!-- 是否去除自动生成的注释 true：是 ： false:否 -->
+            <property name="suppressAllComments" value="true"/>
+        </commentGenerator>
+
+        <!--数据库连接的信息：驱动类、连接地址、用户名、密码 -->
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                        connectionURL="jdbc:mysql://192.168.3.244:3306/db.user?zeroDateTimeBehavior=convertToNull&amp;useUnicode=true&amp;characterEncoding=utf-8"
+                        userId="dev" password="new*2017"/>
+        <!--  默认false，把JDBC DECIMAL 和 NUMERIC 类型解析为 Integer
+        true，把JDBC DECIMAL 和 NUMERIC 类型解析为java.math.BigDecimal-->
+        <javaTypeResolver>
+            <property name="forceBigDecimals" value="true"/>
+        </javaTypeResolver>
+        <!--生成Model类存放位置(model)-->
+        <javaModelGenerator targetPackage="com.hb.insure.db.user.entity"
+                            targetProject="src\main\java">
+            <property name="enableSubPackages" value="true"/>
+            <property name="trimStrings" value="true"/>
+        </javaModelGenerator>
+        <!--生成映射文件存放位置(resources)-->
+        <sqlMapGenerator targetPackage="com.hb.insure.db.user.dao.mapper"
+                         targetProject="src\main\resources">
+            <property name="enableSubPackages" value="true"/>
+        </sqlMapGenerator>
+        <!--生成Dao类存放位置(mapper interface)-->
+        <javaClientGenerator targetPackage="com.hb.insure.db.user.dao.mapper"
+                             targetProject="src\main\java"
+                             type="XMLMAPPER">
+            <property name="enableSubPackages" value="true"/>
+        </javaClientGenerator>
+
+        <!--MVN 命令：mvn mybatis-generator:generate-->
+        <!-- 示例-begin-->
+        <table tableName="tb_verify_code" enableDeleteByPrimaryKey="false" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <!--identity=true 代表生成自增长的id -->
+            <generatedKey column="vc_id" sqlStatement="MySql" identity="true"/>
+        </table>
+        <table tableName="tb_login_info" enableDeleteByPrimaryKey="false" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <!--identity=true 代表生成自增长的id -->
+            <generatedKey column="li_id" sqlStatement="MySql" identity="true"/>
+        </table>
+        <table tableName="tb_test_data"></table>
+        <!--enableDeleteByPrimaryKey=false 不生成物理删除的方法 -->
+        <table tableName="tb_user" enableDeleteByPrimaryKey="false" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+        <!--domainObjectName 代表实体类的名称-不写则用首字母大写去掉中间的下划线 -->
+        <table tableName="message" domainObjectName="Messgae" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+        <!--示例-end-->
+
+    </context>
+</generatorConfiguration>
