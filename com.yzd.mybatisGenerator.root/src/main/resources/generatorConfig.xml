@@ -4,8 +4,6 @@
 <generatorConfiguration>
     <!-- 配置文件路径 -->
     <properties resource="generatorConfig.properties"/>
-    <!--mysql-connector-java-5.1.6.jar包的地址 -->
-    <classPathEntry location="${drive.class.path}"/>
     <context id="context1" targetRuntime="MyBatis3">
         <commentGenerator>
             <!-- 是否去除自动生成的注释 true：是 ： false:否 -->

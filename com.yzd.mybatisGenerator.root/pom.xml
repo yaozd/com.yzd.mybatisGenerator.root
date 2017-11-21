@@ -26,6 +26,14 @@
                     <verbose>true</verbose>
                     <overwrite>true</overwrite>
                 </configuration>
+                <dependencies>
+                    <dependency>
+                        <groupId>mysql</groupId>
+                        <artifactId>mysql-connector-java</artifactId>
+                        <version>5.1.30</version>
+                    </dependency>
+                    <!-- 增加mybatis 通用mapper -->
+                </dependencies>
             </plugin>
         </plugins>
     </build>
