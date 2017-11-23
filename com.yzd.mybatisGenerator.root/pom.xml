@@ -8,11 +8,12 @@
     <artifactId>com.yzd.mybatisGenerator.root</artifactId>
     <version>1.0-SNAPSHOT</version>
     <dependencies>
-        <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
         <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
-            <version>5.1.6</version>
+            <groupId>com.oracle</groupId>
+            <artifactId>ojdbc6</artifactId>
+            <version>11.2.0.1.0</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/src/main/resources/lib/ojdbc6-11.2.0.1.0.jar</systemPath>
         </dependency>
     </dependencies>
     <!--mybatis代码生成需要的插件-->
@@ -28,11 +29,12 @@
                 </configuration>
                 <dependencies>
                     <dependency>
-                        <groupId>mysql</groupId>
-                        <artifactId>mysql-connector-java</artifactId>
-                        <version>5.1.30</version>
+                        <groupId>com.oracle</groupId>
+                        <artifactId>ojdbc6</artifactId>
+                        <version>11.2.0.1.0</version>
+                        <scope>system</scope>
+                        <systemPath>${project.basedir}/src/main/resources/lib/ojdbc6-11.2.0.1.0.jar</systemPath>
                     </dependency>
-                    <!-- 增加mybatis 通用mapper -->
                 </dependencies>
             </plugin>
         </plugins>

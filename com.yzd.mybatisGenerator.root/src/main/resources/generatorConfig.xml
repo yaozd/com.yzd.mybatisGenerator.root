@@ -4,13 +4,15 @@
 <generatorConfiguration>
     <!-- 配置文件路径 -->
     <properties resource="generatorConfig.properties"/>
+    <!-- 如果本地的nexus库中没有oracle驱动的话，可以手动加载 -->
+    <!--<classPathEntry location="G:/1/ojdbc6.jar"/>-->
     <context id="context1" targetRuntime="MyBatis3">
         <commentGenerator>
             <!-- 是否去除自动生成的注释 true：是 ： false:否 -->
             <property name="suppressAllComments" value="true"/>
         </commentGenerator>
         <!--数据库连接的信息：驱动类、连接地址、用户名、密码 -->
-        <jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="${jdbc.url}" userId="${jdbc.username}" password="${jdbc.password}"/>
+        <jdbcConnection driverClass="oracle.jdbc.driver.OracleDriver" connectionURL="${jdbc.url}" userId="${jdbc.username}" password="${jdbc.password}"/>
         <!--  默认false，把JDBC DECIMAL 和 NUMERIC 类型解析为 Integer
         true，把JDBC DECIMAL 和 NUMERIC 类型解析为java.math.BigDecimal-->
         <javaTypeResolver>
@@ -32,15 +34,13 @@
 
         <!--MVN 命令：mvn mybatis-generator:generate-->
         <!-- 示例-begin-->
-        <table tableName="tb_test" enableDeleteByPrimaryKey="false" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
-            <!--Mybatis-V2-ShardingJDBC版 -->
-            <!--identity=true 代表生成自增长的id -->
-            <generatedKey column="order_id" sqlStatement="JDBC" identity="true"/>
+        <table tableName="TB_NEW_EMPLOYEE" enableDeleteByPrimaryKey="false" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <generatedKey column="op_id" sqlStatement="ORACLE" identity="true"/>
         </table>
         <table tableName="tb_temp_order_product_0" enableDeleteByPrimaryKey="false" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
             <!--Mybatis-V2-ShardingJDBC版 -->
             <!--identity=true 代表生成自增长的id -->
-            <generatedKey column="op_id" sqlStatement="JDBC" identity="true"/>
+            <generatedKey column="op_id" sqlStatement="ORACLE" identity="true"/>
         </table>
         <!--示例-end-->
 
