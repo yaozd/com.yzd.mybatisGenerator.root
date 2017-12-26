@@ -7,6 +7,8 @@ Maven命令：
 
 mvn mybatis-generator:generate
 
+特别注意：进行插入记录时：禁止使用insert 方法，只能使用 insertSelective ，因为insert 方法会使用数据库字段的值设置为NULL而不走默认的值
+
 /////////////////////////////////////////////////////////////////////
 Mybatis-V1-普通版：
 <!--identity=true 代表生成自增长的id -->
