@@ -27,3 +27,10 @@ Mybatis-V2-ShardingJDBC版：
     insert into tb_test ……
 </insert>
 /////////////////////////////////////////////////////////////////////
+<!-- 注释【generatedKey column="order_id" sqlStatement="JDBC" identity="true"】就不自动生成主键-->
+ <table tableName="tb_order" enableDeleteByPrimaryKey="false" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+     <!--Mybatis-V2-ShardingJDBC版 -->
+     <!--identity=true 代表生成自增长的id -->
+     <!--<generatedKey column="order_id" sqlStatement="JDBC" identity="true"/>-->
+ </table>
+/////////////////////////////////////////////////////////////////////
