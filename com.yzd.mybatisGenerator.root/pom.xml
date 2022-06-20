@@ -12,7 +12,7 @@
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
-            <version>5.1.6</version>
+            <version>8.0.28</version>
         </dependency>
     </dependencies>
     <!--mybatis代码生成需要的插件-->
@@ -30,7 +30,7 @@
                     <dependency>
                         <groupId>mysql</groupId>
                         <artifactId>mysql-connector-java</artifactId>
-                        <version>5.1.30</version>
+                        <version>8.0.28</version>
                     </dependency>
                     <!-- 增加mybatis 通用mapper -->
                 </dependencies>
